@@ -460,7 +460,7 @@ main {
   color: #888;
 }
 
-.footer {
+footer {
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -506,7 +506,7 @@ main {
   padding-block: 20px;
 }
 
-.footer .icon {
+footer .icon {
   width: 36px;
   transition: var(--transitions);
 }
