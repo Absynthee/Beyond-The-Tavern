@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Almendra+Display&family=Amarante&family=Bellefair&display=swap");
+
+.blogimg {
+  margin: auto;
+  padding-top: 150px;
+  margin-bottom: -35px;
+  height: 300px;
+  transition: var(--transitions);
+}
+
+.blogtitle {
+  font-size: 500%;
+  text-align: center;
+  padding-inline: var(--padding);
+  margin-bottom: -20px;
+  line-height: 1;
+  transition: var(--transitions);
+}
+
+.blogtag {
+  text-align: center;
+  color: var(--beyondbrown);
+}
+
+#blog {
+  position: relative;
+  max-width: 1920px;
+  margin: auto;
+  padding-inline: var(--padding);
+  padding-block: 50px;
+
+  h2 {
+    font-size: 400%;
+    margin-top: -10px;
+    margin-bottom: 0px;
+    line-height: 1;
+  }
+
+  label {
+    display: inline-block;
+    grid-template-columns: auto;
+    min-width: 125px;
+    color: var(--beyondbrown);
+    margin-right: 20px;
+  }
+}
+
+article {
+  margin-bottom: 70px;
+}
+
+p {
+  line-height: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+article p:first-of-type::first-letter {
+  float: left;
+  position: relative;
+  font-size: 4em;
+  margin-right: 10px;
+  line-height: 1;
+  font-family: "XmasTerpieceSwashes", XmasTerpiece, serif;
+  font-weight: 400;
+  color: var(--beyondbrown);
+}
+
+.indicator {
+  display: inline-block;
+  right: 1em;
+  padding: 1em;
+  background: wheat;
+  color: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: opacity 0.5s;
+}
+
+.indicator--passed,
+.indicator--upcoming {
+  position: fixed;
+}
+
+.indicator--passed {
+  top: 0 !important;
+}
+
+.indicator--upcoming {
+  bottom: 0 !important;
+}
+
+.indicator--active {
+  position: absolute;
+}
+
+.indicator--viewing,
+.indicator:hover {
+  opacity: 1;
+}
+
+.indicator-tooltip {
+  position: absolute;
+  right: 2em;
+  width: 0;
+  margin-top: -1em;
+  background-color: #e62b7c;
+  color: #fff;
+  white-space: nowrap;
+  border-radius: 3px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.indicator-tooltip:after {
+  display: block;
+  content: "";
+  position: absolute;
+  right: -0.9em;
+  top: 50%;
+  width: 0;
+  height: 0;
+  margin-top: -0.4em;
+  border: 0.4em solid transparent;
+  border-left: 0.5em solid #e45694;
+}
+
+.indicator:hover .indicator-tooltip {
+  width: auto;
+  padding: 0.5em;
+  overflow: visible;
+  z-index: 1;
+}
+
+hr {
+  overflow: visible; /* For IE */
+  width: 90%;
+  height: 30px;
+  margin-block: 30px;
+  border-style: solid;
+  border-color: var(--beyondbrown);
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+
+hr:before {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -30px;
+  border-style: solid;
+  border-color: var(--beyondbrown);
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  p {
+    font-size: 110%;
+    transition: var(--transitions);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .blogtitle {
+    font-size: 350%;
+    margin-top: 50px;
+    margin-bottom: -20px;
+    line-height: 1;
+  }
+
+  p {
+    font-size: 100%;
+    transition: var(--transitions);
+  }
+
+  #blog h2 {
+    font-size: 250%;
+    margin-top: -5px;
+    margin-bottom: 0px;
+  }
+
+  label {
+    font-size: 90%;
+  }
+}

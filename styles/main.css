@@ -1,0 +1,642 @@
+/* @import url(/fonts/friz-quadrata-std-medium.otf);
+@import url(/fonts/friz-quadrata-std-bold.otf); */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button p::selection {
+  color: inherit;
+}
+
+p,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "friz quadrata std", Friz Quadrata Std, sans-serif;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+.large {
+  display: block;
+}
+
+.medium {
+  display: none;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --background: rgb(20, 20, 20);
+  --beyondbrown: #9b9a8c;
+  --transitions: all 0.5s;
+  --padding: 2%;
+}
+
+::selection {
+  color: var(--beyondbrown);
+}
+
+p {
+  font-size: 125%;
+  transition: var(--transitions);
+}
+
+h2 {
+  font-size: 200%;
+  transition: var(--transitions);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
+main {
+  display: block;
+  margin: auto;
+}
+
+.content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1920px;
+  min-height: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.left {
+  z-index: 2;
+  display: flex;
+  place-self: center;
+  margin-top: 120px;
+  height: 100%;
+  width: 750px;
+  margin-left: 50px;
+  margin-right: -20px;
+  background-image: url(/images/hero_2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: var(--transitions);
+}
+
+.left:hover {
+  background-image: url(/images/hero_hover.png);
+}
+
+.right {
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto;
+  height: 100%;
+  width: 100%;
+  gap: 1rem;
+  place-content: center;
+  -webkit-mask: linear-gradient(
+    0deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(
+    180deg,
+    transparent 10%,
+    var(--background) 25%,
+    var(--background) 85%,
+    transparent 100%
+  );
+}
+
+.marquee-wrapper .container {
+  display: flex;
+  justify-items: flex-end;
+  overflow: hidden;
+  right: -100px;
+  left: 500px;
+}
+
+.marquee-wrapper .marquee-block {
+  width: 250px;
+  height: auto;
+  height: 800px;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.marquee-inner {
+  display: block;
+  position: absolute;
+  user-select: none;
+}
+
+.marquee-inner.to-left {
+  animation: marqueeTop 90s linear infinite;
+}
+.marquee-inner.to-right {
+  animation: marqueeBottom 100s linear infinite;
+}
+.marquee-inner.to-left-2 {
+  animation: marqueeTop 110s linear infinite;
+}
+
+.marquee-item {
+  display: block;
+  width: 230px;
+  height: 230px;
+  margin: 1rem;
+  transition: var(--transitions) ease-out;
+}
+@keyframes marqueeTop {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -338%;
+  }
+}
+@keyframes marqueeBottom {
+  0% {
+    top: -338%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.description {
+  display: flex;
+  max-width: 1920px;
+  margin: auto;
+  margin-block: 50px;
+  justify-content: center;
+  padding-inline: var(--padding);
+  text-align: justify;
+}
+
+.blurbs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 1920px;
+  padding-inline: var(--padding);
+  gap: 1rem;
+  place-content: center;
+}
+
+.blurb1,
+.blurb2,
+.blurb3,
+.blurb4 {
+  width: calc(25% - 1rem);
+  min-width: 250px;
+  margin-block: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 5px;
+  place-items: center;
+  text-align: center;
+  transition: var(--transitions);
+
+  img {
+    max-width: 100px;
+    padding-bottom: 10px;
+    user-select: none;
+  }
+
+  h3 {
+    margin-bottom: 2px;
+  }
+}
+
+.white_container {
+  background: url(/images/artistbg.png);
+  background-size: 5%;
+  background-position: center;
+  background-color: white;
+  color: black;
+  transition: var(--transitions);
+}
+
+.about {
+  margin: auto;
+  display: flex;
+  max-width: 1920px;
+  transition: var(--transitions);
+  padding-inline: var(--padding);
+}
+
+.aboutartist {
+  background: none;
+  max-width: 500px;
+  place-content: end;
+  flex-shrink: 0;
+  transition: var(--transitions);
+}
+
+.gallery {
+  display: block;
+  max-width: 1920px;
+  margin: auto;
+  padding-inline: var(--padding);
+  margin-bottom: 4rem;
+
+  button {
+    display: block;
+    position: relative;
+    margin: auto;
+    max-width: 790px;
+    width: calc(100% - var(--padding));
+
+    p {
+      margin: auto;
+    }
+  }
+}
+
+.gallery-options {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 100%;
+  gap: 1rem;
+  place-content: center;
+  transition: var(--transitions);
+}
+
+.gallery-options-details {
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+  min-width: 400px;
+  margin-block: 1rem;
+  padding-inline: 5px;
+  place-items: center;
+  text-align: center;
+  transition: var(--transitions);
+
+  img {
+    aspect-ratio: 1/1;
+    box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.25);
+    transition: var(--transitions);
+  }
+
+  img:hover {
+    filter: sepia(100%);
+    transform: scale(105%);
+    transform-origin: center;
+    transition: 1s all ease-in-out;
+  }
+
+  h3 {
+    margin-bottom: -20px;
+  }
+
+  p {
+    color: var(--beyondbrown);
+    font-weight: 600;
+  }
+}
+
+#shop {
+  height: 50px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: var(--transitions) ease-in-out;
+
+  &:hover {
+    background-color: var(--beyondbrown);
+    transform: scale(105%);
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1920px;
+  transition: var(--transitions);
+  padding-inline: var(--padding);
+  padding-bottom: 2rem;
+}
+
+.contact-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  border: 0;
+}
+
+#contact {
+  box-sizing: border-box;
+  border: 0;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#contact button[type="submit"] {
+  background: var(--background);
+  width: 100%;
+  margin: 0 0 5px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 10px;
+  transition: var(--transitions);
+
+  p {
+    margin: 0;
+  }
+}
+
+#contact button[type="submit"]:hover {
+  background: var(--beyondbrown);
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+  max-width: 1920px;
+  margin-top: 1rem;
+  padding-block: 1rem;
+
+  .door {
+    width: 50px;
+    margin: auto;
+    margin-bottom: -20px;
+  }
+}
+
+.footernav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footernav li {
+  margin-bottom: 1em;
+}
+
+.footernav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.footernav a:hover {
+  color: var(--beyondbrown);
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  gap: 1.5rem;
+  padding-block: 20px;
+}
+
+.footer .icon {
+  width: 36px;
+  transition: var(--transitions);
+}
+
+.icon:hover {
+  transform: scale(110%);
+}
+
+.footerend {
+  color: var(--beyondbrown);
+  font-size: 75%;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+#about-me {
+  scroll-behavior: smooth;
+  padding-top: 80px; /* Adjust this value based on the height of your nav bar */
+  margin-top: -80px; /* This should be the negative value of your padding */
+}
+
+/* breakpoints */
+@media screen and (max-width: 1200px) {
+  #beyond,
+  #beyondthe {
+    font-size: 130%;
+    transition: var(--transitions);
+  }
+
+  #tavern {
+    font-size: 230%;
+    transition: var(--transitions);
+  }
+
+  p {
+    font-size: 110%;
+    transition: var(--transitions);
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .blurb1,
+  .blurb2,
+  .blurb3,
+  .blurb4 {
+    width: calc(50% - 1rem);
+    min-width: 250px;
+    margin-block: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(rgba(80, 53, 3, 0.521), 0.75);
+    padding-bottom: 10px;
+    place-items: center;
+    text-align: center;
+    padding-inline: 5px;
+    transition: var(--transitions);
+
+    img {
+      max-width: 80px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .white_container {
+    background-size: 10%;
+  }
+
+  .about {
+    flex-direction: column;
+    place-items: center;
+  }
+
+  .aboutartist img {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #tavern {
+    font-size: 175%;
+    transition: var(--transitions);
+  }
+
+  p {
+    font-size: 100%;
+    transition: var(--transitions);
+  }
+
+  h2 {
+    font-size: 150%;
+  }
+
+  .left {
+    width: 450px;
+    box-shadow: inset -30px 10px 50px var(--background);
+  }
+
+  .left img {
+    max-width: 400px;
+    transition: var(--transitions);
+  }
+
+  .marquee-wrapper .marquee-block {
+    width: 220px;
+  }
+
+  .marquee-item {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .content {
+    min-height: 300px;
+    max-height: 600px;
+    overflow: hidden;
+  }
+
+  .left {
+    width: 250px;
+    box-shadow: inset -20px 10px 50px var(--background);
+  }
+
+  .marquee-item {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+  }
+}
