@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="images/door.png">
     <title>BEYOND THE TAVERN</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/carousel.css">
     <link rel="stylesheet" href="styles/nav-styles.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/blog-styles.css">
@@ -323,39 +326,94 @@
             </button>
         </div>
 
+
         <div class="white_container">
-            <div class="contact" id="contact-me">
-                <h2>Contact Us</h2>
-                <p>Got something to say? Want a commission that isn't listed above? Don't fancy shopping on Etsy? Send a
-                    message using the form below and we'll get back to you as soon as possible.</p>
-                <div class="contact-container">
-                    <form id="contact" action="contactus.php" method="post">
-                        <fieldset>
-                            <input placeholder="Your name" type="text" name="name" tabindex="5" required>
-                        </fieldset>
-                        <fieldset>
-                            <input placeholder="Your Email Address" type="email" name="email" tabindex="6" required>
-                        </fieldset>
-                        <fieldset>
-                            <textarea placeholder="Type your message here...." name="message" tabindex="7"
-                                required></textarea>
-                        </fieldset>
-                        <fieldset>
-                            <textarea placeholder="SPAM PREVENTION" type="text" name="honeypot"
-                                style="display: none;"></textarea>
-                        </fieldset>
-                        <fieldset>
-                            <button name="submit" type="submit" id="contact-submit" data-submit="Sent!">
-                                <p>Submit</p>
-                            </button>
-                        </fieldset>
-                    </form>
+            <div class="testimonial-container">
+                <h2>Testimonials</h2>
+                <div id="testimonial4"
+                    class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x"
+                    data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
+
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <div class="testimonial4_slide">
+                                <img src="images/people/female1.jpg" class="img-circle img-responsive" />
+                                <p>Rose was absolutely wonderful to work with! She was very quick to respond, and she
+                                    was very patient with the obsession I have with my characters. I gave her the
+                                    reference images I had for my dnd characters, and she gave me all I could have asked
+                                    for! I am so happy with the work she did and look forward to getting more art
+                                    commissioned. Would 100% recommend!!</p>
+                                <h4>Lindsey</h4>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial4_slide">
+                                <img src="images/people/male1.jpg" class="img-circle img-responsive" />
+                                <p>Rose helped compose a battle scene to immortalize the fall of my gaming group's first
+                                    party -- and was a pleasure to work with throughout the process. I'd highlight
+                                    especially Rose's responsiveness, attention to detail and general
+                                    aesthetic. If you're looking for a great RPG-inspired artwork, you cannot go wrong
+                                    with Rose and BeyondTheTavern.</p>
+                                <h4>trumanshuck</h4>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial4_slide">
+                                <img src="images/people/hayley.jpg" class="img-circle img-responsive" />
+                                <p>So I have been trying to find someone to bring my character to life for a while. This
+                                    month I thought f**k it and picked the lovely Rose. This artist is amazing and fully
+                                    understood the look and style I wanted for my girl. I would recommend this lovely
+                                    artist to anyone looking for character art.</p>
+                                <h4>hayley</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#testimonial4" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#testimonial4" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
                 </div>
             </div>
         </div>
 
-    </main>
+        <!-- <div class="white_container"> -->
+        <div class="contact" id="contact-me">
+            <h2>Contact Us</h2>
+            <p>Got something to say? Want a commission that isn't listed above? Don't fancy shopping on Etsy? Send a
+                message using the form below and we'll get back to you as soon as possible.</p>
+            <div class="contact-container">
+                <form id="contact" action="contactus.php" method="post">
+                    <fieldset>
+                        <input placeholder="Your name" type="text" name="name" tabindex="5" required>
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="Your Email Address" type="email" name="email" tabindex="6" required>
+                    </fieldset>
+                    <fieldset>
+                        <textarea placeholder="Type your message here...." name="message" tabindex="7"
+                            required></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <textarea placeholder="SPAM PREVENTION" type="text" name="honeypot"
+                            style="display: none;"></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <input name="submit" type="submit" id="contact-submit" data-submit="Sent!" value="Submit">
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <!-- </div> -->
 
+
+
+    </main>
+    <hr>
     <footer>
         <div class="footernav">
             <ul>
@@ -377,7 +435,7 @@
         <p>Beyond the Tavern © 2024</p>
         <p class="footerend">Website designed & developed by <a href="https://www.austinspillman.com"
                 target="_blank">Austin Spillman</a></p>
-        </footer>
+    </footer>
 
 </body>
 
