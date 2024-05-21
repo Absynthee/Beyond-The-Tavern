@@ -145,7 +145,7 @@ main {
   width: 750px;
   margin-left: 50px;
   margin-right: -20px;
-  background-image: url(/images/hero_2.png);
+  background-image: url(../images/hero_2.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -153,7 +153,7 @@ main {
 }
 
 .left:hover {
-  background-image: url(/images/hero_hover.png);
+  background-image: url(../images/hero_hover.png);
 }
 
 .right {
