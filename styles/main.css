@@ -285,7 +285,7 @@ main {
 }
 
 .white_container {
-  background: url(/images/artistbg.png);
+  background: url(../images/artistbg.png);
   background-size: 5%;
   background-position: center;
   background-color: white;
@@ -315,6 +315,7 @@ main {
   margin: auto;
   padding-inline: var(--padding);
   margin-bottom: 4rem;
+  
 
   button {
     display: block;
@@ -720,8 +721,6 @@ footer .icon {
 }
 
 .testimonial4_slide p {
-  font-size: 20px;
-  line-height: 1.4;
   margin: 40px 0 20px 0;
 }
 
@@ -744,6 +743,76 @@ footer .icon {
   filter: invert(100%);
 }
 /* ------testimonial  close-------*/
+
+.animatable {
+  /* initially hide animatable objects */
+  visibility: hidden;
+
+  /* initially pause animatable objects their animations */
+  animation-play-state: paused;
+}
+
+/* show objects being animated */
+.animated {
+  visibility: visible;
+
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-play-state: running;
+}
+
+/* CSS Animations (extracted from http://glifo.uiparade.com/) */
+@keyframes fadeIn {
+  0%,
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated.animationDelay {
+  animation-delay: 0.4s;
+}
+.animated.animationDelayMed {
+  animation-delay: 1.2s;
+}
+.animated.animationDelayLong {
+  animation-delay: 1.6s;
+}
+.animated.fadeIn {
+  animation-name: fadeIn;
+}
+.animated.fadeInDown {
+  animation-name: fadeInDown;
+}
+.animated.fadeInUp {
+  animation-name: fadeInUp;
+}
+
 
 /* breakpoints */
 @media screen and (max-width: 1200px) {
