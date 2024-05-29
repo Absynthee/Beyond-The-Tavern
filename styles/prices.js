@@ -1,13 +1,17 @@
-// prices.js
-
-
-// if adding a sale, multiply the number by the sale percentage.
-
-export var prices = { 
-    "bust": 42, // EXAMPLE: 42 * . 80, for a 20% sale
-    "half": 54, 
-    "full": 66, 
-    "dndhalf": 102, 
-    "dndfull": 120, 
+export var prices = {
+    "bust": 42,
+    "half": 54,
+    "full": 66,
+    "dndhalf": 102,
+    "dndfull": 120,
     "dndparty": 144
 };
+
+// if adding a sale, change the discount value.
+// i.e. 0.8 = 20% discount.
+  var discount = 1; 
+  
+  Object.keys(prices).forEach(function(key) {
+    prices[key] = prices[key] * discount;
+  });
+  

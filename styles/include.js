@@ -45,7 +45,7 @@ jQuery(function($) {
       // Check all animatables and animate them if necessary
           $animatables.each(function(i) {
          var $animatable = $(this);
-              if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+              if (($animatable.offset().top + $animatable.height() - 120) < offset) {
           $animatable.removeClass('animatable').addClass('animated');
               }
       });
@@ -57,3 +57,12 @@ jQuery(function($) {
     $(window).trigger('scroll');
   
   });
+
+  // Get all elements with class 'articlelink'
+var $articlesLink = $('.articlelink');
+
+// Loop through all elements with class 'articlelink'
+$articlesLink.not(':last').each(function() {
+  // Insert <hr> after each element with class 'articlelink'
+  $(this).after('<hr>');
+});
