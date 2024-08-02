@@ -1,0 +1,7 @@
+User-agent: Googlebot-Image
+Disallow: /images/artistbg.png
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.beyondthetavern.com/sitemap.xml
