@@ -4,6 +4,9 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Beyond the Tavern is an Etsy Store for ai-human art commissions. Run by Rose Butcher, the store focuses on a fantasy aesthetic that can similarly be found in D&D.">
+
 	<link rel="icon" type="image/png" sizes="32x32" href="images/door.png">
 	<title>Beyond The Tavern | HOME</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -380,42 +383,56 @@
 		<div class="contact" id="contact-me">
 			<h2>Contact Us</h2>
 
-			<div class="contact-container">
+			<!-- <div class="contact-container">
 				<div class="contact-img"><img src="images/marquee/1.jpg" alt=""></div>
 				<div class="contact-text">
 					<h3>Got something to say? Want a commission that isn't listed above? Don't fancy shopping on Etsy?</h3>
 					<p>Send us an email to <a href="mailto:rose@beyondthetavern.com">rose@beyondthetavern.com</a> and we'll get back to you as soon as possible!</p>
 				</div>
 			</div>
-
-			<!-- <div class="contact-container">
-				<form id="contact" action="contactus.php" method="post">
+ -->
+			<div class="contact-container">
+				<form id="contact" method="POST" novalidate>
+					<input type="hidden" name="access_key" value="34317982-f38f-4672-b238-073c162f37c4">
 					<fieldset>
-						<input placeholder="Your name" type="text" name="name" tabindex="5" required>
+						<input id="name" placeholder="Your name" type="text" name="name" required>
+						<div class="invalid" id="name-invalid">
+							Please provide your name.
+						</div>
 					</fieldset>
 					<fieldset>
-						<input placeholder="Your Email Address" type="email" name="email" tabindex="6" required>
+						<input id="email" placeholder="Your Email Address" type="email" name="email" required>
+						<div class="invalid" id="email-invalid">
+							Please provide a valid email address.
+						</div>
 					</fieldset>
 					<fieldset>
-						<textarea placeholder="Type your message here...." name="message" tabindex="7"
+						<input id="commission" placeholder="What type of commission would you like?" type="text"
+							name="commission">
+						<div class="invalid" id="commission-invalid">
+							Please provide a commission type.
+						</div>
+					</fieldset>
+					<fieldset>
+						<textarea id="message" placeholder="Type your message here...." name="message"
 							required></textarea>
+						<div class="invalid" id="message-invalid">
+							Please leave us a message. How else will we know what you want? 😆
+						</div>
 					</fieldset>
+					<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 					<fieldset>
-						<textarea placeholder="SPAM PREVENTION" type="text" name="honeypot"
-							style="display: none;"></textarea>
+						<button type="submit" id="contact-submit">Submit</button>
 					</fieldset>
-					<fieldset>
-						<input name="submit" type="submit" id="contact-submit" data-submit="Sent!" value="Submit">
-						</button>
-					</fieldset>
+					<div id="result"></div>
 				</form>
-			</div> -->
+			</div>
 		</div>
 
 	</main>
 
 	<hr>
-	
+
 	<footer>
 		<div class="footernav">
 			<ul>
@@ -434,12 +451,13 @@
 			<a href="https://www.instagram.com/beyond_the_tavern/" target="_blank">
 				<img src="images/icons/instagram-icon.svg" alt="Instagram" class="icon"></a>
 			<!-- <a href="#"><img src="images/icons/tiktok-icon.svg" alt="TikTok" class="icon"></a> -->
-			<a href="mailto:rose@beyondthetavern.com"><img src="images/icons/email-icon.svg" alt="Email" class="icon"></a>
+			<a href="mailto:rose@beyondthetavern.com"><img src="images/icons/email-icon.svg" alt="Email"
+					class="icon"></a>
 		</div>
 		<img class="door" src="images/door.png" alt="beyond the tavern door">
 		<p>Beyond the Tavern © 2024</p>
-		<p class="footerend">Website designed & developed by <a href="https://www.austinspillman.com"
-				target="_blank">Austin Spillman</a></p>
+		<p class="footerend">Website designed & developed by <a href="https://www.kittycodecreative.com"
+				target="_blank">KittyCode Creative</a></p>
 	</footer>
 
 </body>
