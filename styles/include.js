@@ -66,3 +66,178 @@ $articlesLink.not(':last').each(function() {
   // Insert <hr> after each element with class 'articlelink'
   $(this).after('<hr>');
 });
+
+// FORM
+
+// const form = document.getElementById('contact');
+// const result = document.getElementById('result');
+
+// form.addEventListener('submit', function(e) {
+//   e.preventDefault();
+//   const formData = new FormData(form);
+//   const object = Object.fromEntries(formData);
+//   const json = JSON.stringify(object);
+//   result.innerHTML = "Please wait..."
+
+//     fetch('https://api.web3forms.com/submit', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 'Accept': 'application/json'
+//             },
+//             body: json
+//         })
+//         .then(async (response) => {
+//             let json = await response.json();
+//             if (response.status == 200) {
+//                 result.innerHTML = "Form submitted successfully";
+//             } else {
+//                 console.log(response);
+//                 result.innerHTML = json.message;
+//             }
+//         })
+//         .catch(error => {
+//             console.log(error);
+//             result.innerHTML = "Something went wrong!";
+//         })
+//         .then(function() {
+//             form.reset();
+//             setTimeout(() => {
+//                 result.style.display = "none";
+//             }, 3000);
+//         });
+// });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   console.log('Script is running');
+//   document.getElementById('contact').addEventListener('submit', function(event) {
+//       console.log('Form submit event triggered');
+//       event.preventDefault(); // Prevent form submission for testing
+
+//       // Validation logic
+//       let isValid = true;
+
+//       // Name validation
+//       const name = document.getElementById('name').value;
+//       if (!name) {
+//           document.getElementById('name-invalid').style.display = 'block';
+//           isValid = false;
+//           console.log('Name is invalid')
+//       } else {
+//           document.getElementById('name-invalid').style.display = 'none';
+//       }
+
+//       // Email validation
+//       const email = document.getElementById('email').value;
+//       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//       if (!email || !emailPattern.test(email)) {
+//           document.getElementById('email-invalid').style.display = 'block';
+//           isValid = false;
+//           console.log('Email is invalid')
+//       } else {
+//           document.getElementById('email-invalid').style.display = 'none';
+//       }
+
+//       // Message validation
+//       const message = document.getElementById('message').value;
+//       if (!message) {
+//           document.getElementById('message-invalid').style.display = 'block';
+//           isValid = false;
+//           console.log('Message is invalid')
+//       } else {
+//           document.getElementById('message-invalid').style.display = 'none';
+//       }
+
+//       if (isValid) {
+//           console.log('Form is valid');
+//           // Proceed with form submission or further processing
+//       } else {
+//           console.log('Form is invalid');
+//       }
+//   });
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+  // console.log('Script is running');
+  
+  const form = document.getElementById('contact');
+  const result = document.getElementById('result');
+
+  form.addEventListener('submit', function(event) {
+      console.log('Form submit event triggered');
+      event.preventDefault(); // Prevent form submission for testing
+
+      // Validation logic
+      let isValid = true;
+
+      // Name validation
+      const name = document.getElementById('name').value;
+      if (!name) {
+          document.getElementById('name-invalid').style.display = 'block';
+          isValid = false;
+          console.log('Name is invalid');
+      } else {
+          document.getElementById('name-invalid').style.display = 'none';
+      }
+
+      // Email validation
+      const email = document.getElementById('email').value;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailPattern.test(email)) {
+          document.getElementById('email-invalid').style.display = 'block';
+          isValid = false;
+          console.log('Email is invalid');
+      } else {
+          document.getElementById('email-invalid').style.display = 'none';
+      }
+
+      // Message validation
+      const message = document.getElementById('message').value;
+      if (!message) {
+          document.getElementById('message-invalid').style.display = 'block';
+          isValid = false;
+          console.log('Message is invalid');
+      } else {
+          document.getElementById('message-invalid').style.display = 'none';
+      }
+
+      if (isValid) {
+          console.log('Form is valid');
+          // Proceed with form submission
+          const formData = new FormData(form);
+          const object = Object.fromEntries(formData);
+          const json = JSON.stringify(object);
+          result.innerHTML = "Please wait...";
+
+          fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+              },
+              body: json
+          })
+          .then(async (response) => {
+              let json = await response.json();
+              if (response.status == 200) {
+                  result.innerHTML = "Thank you! We've got your message. We'll get back to you as soon as possible!";
+              } else {
+                  console.log(response);
+                  result.innerHTML = json.message;
+              }
+          })
+          .catch(error => {
+              console.log(error);
+              result.innerHTML = "Something went wrong!";
+          })
+          .then(function() {
+              form.reset();
+              setTimeout(() => {
+                  result.style.display = "none";
+              }, 3000);
+          });
+      } else {
+          console.log('Form is invalid');
+      }
+  });
+});

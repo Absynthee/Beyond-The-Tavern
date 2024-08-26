@@ -418,6 +418,14 @@ button {
       transform: scale(115%);
     }
   }
+  
+  form {
+    width: 100%;
+  }
+}
+
+.invalid {
+  display: none;
 }
 
 .contact-img {
